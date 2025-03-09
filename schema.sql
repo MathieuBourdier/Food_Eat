@@ -1,4 +1,4 @@
-CREATE DATABASE gestion_produits;
+CREATE DATABASE Food_eats;
 USE gestion_produits;
 
 CREATE TABLE produits (
