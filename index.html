@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FOOD EAT</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>FOOD EAT</h1>
+        <h2>Gestion des Produits Alimentaires</h2>
+    </header>
+    
+    <main>
+        <section id="ajout-produit">
+            <h2>Ajouter un Produit</h2>
+            <form id="produit-form">
+                <label for="nom">Nom du produit :</label>
+                <input type="text" id="nom" required>
+
+                <label for="type">Type :</label>
+                <input type="text" id="type" required>
+
+                <label for="date-achat">Date d'achat :</label>
+                <input type="date" id="date-achat" required>
+
+                <label for="dlc">DLC :</label>
+                <input type="date" id="dlc" required>
+
+                <label for="notes">Notes :</label>
+                <textarea id="notes"></textarea>
+
+                <button type="submit">Ajouter</button>
+            </form>
+        </section>
+        
+        <section id="liste-produits">
+            <h2>Produits Enregistrés</h2>
+            <input type="text" id="recherche" placeholder="Rechercher un produit...">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Nom</th>
+                        <th>Type</th>
+                        <th>Date d'Achat</th>
+                        <th>DLC</th>
+                        <th>Notes</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="produits-table">
+                    <!-- Les produits seront affichés ici -->
+                </tbody>
+            </table>
+        </section>
+    </main>
+    
+    <script src="script.js"></script>
+</body>
+</html>
