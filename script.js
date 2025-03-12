@@ -13,7 +13,7 @@ function chargerProduits() {
                 const row = document.createElement('tr');
                 row.innerHTML = `
                     <td>${produit.nom}</td>
-                    <td>${types}</td>
+                    <td>${type}</td>
                     <td>${produit.date_achat}</td>
                     <td>${produit.dlc}</td>
                     <td>${note}</td>
