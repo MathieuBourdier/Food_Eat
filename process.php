@@ -14,7 +14,7 @@ try {
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Vérifier que les clés existent avant d'y accéder
         $nom = isset($_POST['nom']) ? htmlspecialchars($_POST['nom']) : null;
-        $types = isset($_POST['type']) ? htmlspecialchars($_POST['type']) : null;
+        $types = isset($_POST['type']) ? htmlspecialchars($_POST['types']) : null;
         $date_achat = isset($_POST['date_achat']) ? $_POST['date_achat'] : null;
         $dlc = isset($_POST['dlc']) ? $_POST['dlc'] : null;
         $notes = isset($_POST['notes']) ? htmlspecialchars($_POST['notes']) : null;

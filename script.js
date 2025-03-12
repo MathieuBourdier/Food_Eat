@@ -1,4 +1,3 @@
-// Fonction pour charger les produits
 function chargerProduits() {
     fetch('get_products.php')
         .then(response => response.json())
@@ -7,13 +6,17 @@ function chargerProduits() {
             tableBody.innerHTML = '';
 
             produits.forEach(produit => {
+                // Vérification et formatage des valeurs
+                const type = produit.types || '-';
+                const note = produit.note || '-';
+                
                 const row = document.createElement('tr');
                 row.innerHTML = `
                     <td>${produit.nom}</td>
-                    <td>${produit.type}</td>
+                    <td>${types}</td>
                     <td>${produit.date_achat}</td>
                     <td>${produit.dlc}</td>
-                    <td>${produit.note}</td>
+                    <td>${note}</td>
                     <td>
                         <button onclick="modifierProduit(${produit.id})">Modifier</button>
                         <button onclick="supprimerProduit(${produit.id})">Supprimer</button>
@@ -22,8 +25,29 @@ function chargerProduits() {
                 tableBody.appendChild(row);
             });
         })
-        .catch(error => console.error('Erreur:', error));
+        .catch(error => {
+            console.error('Erreur:', error);
+        });
 }
 
 // Charger les produits au chargement de la page
 document.addEventListener('DOMContentLoaded', chargerProduits);
+
+// Recharger les produits après soumission du formulaire
+document.getElementById('produit-form').addEventListener('submit', function(e) {
+    e.preventDefault();
+    const formData = new FormData(this);
+    
+    fetch('process.php', {
+        method: 'POST',
+        body: formData
+    })
+    .then(response => response.json())
+    .then(data => {
+        if(data.success) {
+            this.reset();
+            chargerProduits(); // Recharger le tableau
+        }
+    })
+    .catch(error => console.error('Erreur:', error));
+});
