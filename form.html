@@ -15,21 +15,21 @@
     <main>
         <section id="ajout-produit">
             <h2>Ajouter un Produit</h2>
-            <form id="produit-form">
+            <form id="produit-form" action="process.php" method="POST">
                 <label for="nom">Nom du produit :</label>
-                <input type="text" id="nom" required>
+                <input type="text" id="nom" name="nom" required>
 
                 <label for="type">Type :</label>
-                <input type="text" id="type" required>
+                <input type="text" id="type" name="type" required>
 
                 <label for="date-achat">Date d'achat :</label>
-                <input type="date" id="date-achat" required>
+                <input type="date" id="date-achat" name="date_achat" required>
 
                 <label for="dlc">DLC :</label>
-                <input type="date" id="dlc" required>
+                <input type="date" id="dlc" name="dlc" required>
 
                 <label for="notes">Notes :</label>
-                <textarea id="notes"></textarea>
+                <textarea id="notes" name="note" ></textarea>
 
                 <button type="submit">Ajouter</button>
             </form>
