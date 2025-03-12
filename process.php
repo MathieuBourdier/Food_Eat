@@ -7,7 +7,7 @@ $dbname = "food_eat";
 $port=8889;
 
 try {
-    // Connexion avec le port spécifié
+    // Connexion avec le port 
     $pdo = new PDO("mysql:host=$servername;port=$port;dbname=$dbname", $username, $password);
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
