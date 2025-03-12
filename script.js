@@ -10,12 +10,22 @@ function chargerProduits() {
                 const type = produit.types || '-';
                 const note = produit.note || '-';
                 
+                // Formatage des dates
+                const formatDate = (dateStr) => {
+                    const date = new Date(dateStr);
+                    return date.toLocaleDateString('fr-FR', {
+                        day: '2-digit',
+                        month: '2-digit',
+                        year: 'numeric'
+                    }).replace(/\//g, '-');
+                };
+                
                 const row = document.createElement('tr');
                 row.innerHTML = `
                     <td>${produit.nom}</td>
                     <td>${type}</td>
-                    <td>${produit.date_achat}</td>
-                    <td>${produit.dlc}</td>
+                    <td>${formatDate(produit.date_achat)}</td>
+                    <td>${formatDate(produit.dlc)}</td>
                     <td>${note}</td>
                     <td>
                         <button onclick="modifierProduit(${produit.id})">Modifier</button>
