@@ -17,19 +17,19 @@
             <h2>Ajouter un Produit</h2>
             <form id="produit-form" action="process.php" method="POST">
                 <label for="nom">Nom du produit :</label>
-                <input type="text" id="nom" name="nom" required>
+                <input type="text" id="nom" name="nom" required aria-label="Nom du Produit" aria-required="true">
 
                 <label for="types">Type :</label>
-                <input type="text" id="types" name="types" required>
+                <input type="text" id="types" name="types" aria-label="Type de Produit" required aria-required="true">
 
                 <label for="date-achat">Date d'achat :</label>
-                <input type="date" id="date-achat" name="date_achat" required>
+                <input type="date" id="date-achat" name="date_achat" aria-label="Date d'Achat" required aria-required="true">
 
                 <label for="dlc">DLC :</label>
-                <input type="date" id="dlc" name="dlc" required>
+                <input type="date" id="dlc" name="dlc" aria-label="Date Limite de Consommation" required aria-required="true">
 
                 <label for="notes">Notes :</label>
-                <textarea id="note" name="note" ></textarea>
+                <textarea id="note" name="note"  aria-label="Notes"></textarea>
 
                 <button type="submit">Ajouter</button>
             </form>
@@ -50,7 +50,6 @@
                     </tr>
                 </thead>
                 <tbody id="produits-table">
-                    
                     <!-- Les produits seront affichés ici -->
                 </tbody>
             </table>
